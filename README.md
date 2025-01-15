@@ -2,9 +2,9 @@
 
 AI agent research assistant that uses Wikipedia's vast knowledge base to deliver comprehensive, well-researched answers to your questions.
 
-Featuring a ReAct (Reasoning and Action) agent architecture that uses Wikipedia search via API, or RAG (retrieval augmented generation) enhanced by semantic chunking and embeddings.
+Featuring a ReAct (Reasoning and Action) agent architecture that uses Wikipedia, or RAG (retrieval augmented generation) enhanced by semantic chunking and embeddings. Offers flexible access through both terminal and web interfaces.
 
-Built on a modern stack including LangChain's LangGraph, Streamlit, FAISS vector storage, and support for leading LLM providers (OpenAI, Anthropic, Google). Offers flexible access through both terminal and web interfaces.
+Built on a modern stack including LangChain's LangGraph's ReAct agent, Wikipedia API, FAISS vector storage, support for leading LLM providers (OpenAI, Anthropic, Google), and Streamlit frontend. 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
