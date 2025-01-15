@@ -8,6 +8,8 @@ Built on a modern stack including LangChain's LangGraph, Streamlit, FAISS vector
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![readme](https://github.com/user-attachments/assets/a38abdfc-eb7f-4a5c-b56a-399c3ddfc98b)
+
 ## Features
 
 - 🤖 Multiple LLM Support from OpenAI, Anthropic, and Google, such as:
