@@ -1,13 +1,20 @@
+# Core LangChain dependencies
 langchain==0.3.14
 langchain-community==0.3.14
 langgraph==0.2.62
-langchain-anthropic==0.3.1
 langgraph-checkpoint-sqlite==2.0.1
+
+# LLM Provider integrations
+langchain-anthropic==0.3.1
 langchain-openai==0.3.0
 langchain-google-genai==2.0.8
 langchain_experimental==0.3.4
-python-dotenv==1.0.1
 openai==1.59.5
 google-generativeai==0.8.3
+
+# Knowledge base and utilities
 wikipedia==1.4.0
+python-dotenv==1.0.1
+
+# Web interface
 streamlit==1.32.2

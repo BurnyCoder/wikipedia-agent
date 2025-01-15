@@ -1,4 +1,4 @@
-import core.langgraph_agent as agent_langgraph
+import core.langgraph_agent as WikipediaAgent
 import logging
 
 logger = logging.getLogger(__name__)
@@ -6,7 +6,6 @@ logger = logging.getLogger(__name__)
 def run_terminal():
     # Initialize the WikipediaAgent
     logger.info("Initializing WikipediaAgent")
-    agent = agent_langgraph.WikipediaAgent()
     
     while True:
         user_input = input("You: ")
@@ -18,7 +17,7 @@ def run_terminal():
         
         # Use the agent's query method
         logger.debug(f"Processing user input: {user_input}")
-        output = agent.query(user_input)
+        output = WikipediaAgent.query(user_input)
         logger.debug(f"Agent response received")
         print("\n\nAssistant:\n", output)
 

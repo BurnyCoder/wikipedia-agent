@@ -18,9 +18,19 @@ from dotenv import load_dotenv
 import logging
 import glob
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),  # Output to console
+    ]
+)
+
 logger = logging.getLogger(__name__)
 
 load_dotenv()
+
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
@@ -45,7 +55,22 @@ You'll maintain a professional and informative tone while being engaging and cle
 """)
 
 class WikipediaAgent:
-    def __init__(self):
+    """
+    A research assistant that leverages LLMs and Wikipedia to provide comprehensive answers.
+    
+    This agent can use either direct Wikipedia search or RAG (Retrieval Augmented Generation)
+    to provide well-researched answers based on Wikipedia content. It supports multiple LLM
+    providers including OpenAI, Anthropic, and Google.
+
+    Attributes:
+        tools (list): List of tools available to the agent
+        memory (MemorySaver): Memory component for maintaining conversation state
+        model (Union[ChatAnthropic, ChatOpenAI, ChatGoogleGenerativeAI]): The LLM model
+        agent_executor: The LangGraph agent executor
+    """
+
+    def __init__(self) -> None:
+        """Initialize the WikipediaAgent with the configured LLM and tools."""
         logger.info("WikipediaAgent.__init__ :: initializing...")
 
         logger.info(f"WikipediaAgent.__init__ :: Using model: {LLM}")
@@ -109,7 +134,15 @@ class WikipediaAgent:
         logger.info("WikipediaAgent initialized successfully")
 
     def _create_rag_tool(self):
-        """Create and return the RAG tool for knowledge base search"""
+        """
+        Create and return the RAG tool for knowledge base search.
+        
+        This method sets up a FAISS vector store with the documents from the rag_data
+        directory and creates a retriever tool for semantic search.
+        
+        Returns:
+            Tool: A LangChain tool for RAG-based retrieval
+        """
         embeddings = OpenAIEmbeddings()
         text_splitter = SemanticChunker(embeddings)
         
@@ -138,7 +171,21 @@ class WikipediaAgent:
         
         return wikipedia_rag
 
-    def query(self, input_text: str, thread_id: str = "abc123"):
+    def query(self, input_text: str, thread_id: str = "abc123") -> str:
+        """
+        Process a user query using the Wikipedia agent.
+        
+        Args:
+            input_text (str): The user's question or query
+            thread_id (str, optional): Unique identifier for the conversation thread. 
+                                     Defaults to "abc123".
+        
+        Returns:
+            str: The agent's response to the query
+            
+        Raises:
+            Exception: If there's an error during agent execution
+        """
         logger.info(f"WikipediaAgent.query :: received query: {input_text}")
         logger.debug(f"WikipediaAgent.query :: using thread_id: {thread_id}")
 
