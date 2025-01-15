@@ -1,6 +1,6 @@
-# Wikipedia Research Assistant
+# Wikipedia AI agent research assistant.
 
-An AI-powered research assistant that uses Wikipedia's vast knowledge base to deliver comprehensive, well-researched answers to your questions.
+AI agent research assistant that uses Wikipedia's vast knowledge base to deliver comprehensive, well-researched answers to your questions.
 
 Featuring a ReAct (Reasoning and Action) agent architecture that uses Wikipedia search via API, or RAG (retrieval augmented generation) enhanced by semantic chunking and embeddings.
 
