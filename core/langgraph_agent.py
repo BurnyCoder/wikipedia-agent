@@ -23,7 +23,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.StreamHandler(),  # Output to console
+        logging.FileHandler('wikipedia_assistant.log'),  # Output to file only
     ]
 )
 
