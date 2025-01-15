@@ -8,6 +8,7 @@ Wikipedia Research Assistant.
 
 from core.langgraph_agent import WikipediaAgent
 import logging
+from core.logging_config import setup_logging
 import sys
 from typing import NoReturn
 import os
@@ -25,17 +26,11 @@ def print_welcome():
     print("\nType 'exit' or 'quit' to end the session, or 'clear' to clear the screen.")
     print("-"*70 + "\n")
 
-def run_terminal() -> NoReturn:
-    """Run the terminal interface for the Wikipedia Research Assistant."""
-    # Configure logging to write to file instead of terminal
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler('wikipedia_assistant.log'),  # Log to file
-            logging.NullHandler()  # Don't output to terminal
-        ]
-    )
+def main() -> NoReturn:
+    """Run the terminal interface."""
+    # Configure logging
+    setup_logging()
+    logger = logging.getLogger(__name__)
     
     # Initialize agent
     agent = WikipediaAgent()
@@ -77,4 +72,4 @@ def run_terminal() -> NoReturn:
             print(f"\n\033[91m❌ Error: {str(e)}\033[0m\n")
 
 if __name__ == "__main__":
-    run_terminal()
+    main()

@@ -2,7 +2,10 @@ import streamlit as st
 from core.langgraph_agent import WikipediaAgent
 import uuid
 import logging
+from core.logging_config import setup_logging
 
+# Configure logging
+setup_logging()
 logger = logging.getLogger(__name__)
 
 st.set_page_config(page_title="Wikipedia Research Assistant", page_icon="📚")

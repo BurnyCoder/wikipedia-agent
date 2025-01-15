@@ -16,17 +16,11 @@ from langchain.tools.retriever import create_retriever_tool
 import os
 from dotenv import load_dotenv
 import logging
+from .logging_config import setup_logging
 import glob
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('wikipedia_assistant.log'),  # Output to file only
-    ]
-)
-
+setup_logging()
 logger = logging.getLogger(__name__)
 
 load_dotenv()
