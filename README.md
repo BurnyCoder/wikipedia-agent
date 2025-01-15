@@ -2,9 +2,9 @@
 
 AI agent research assistant that uses Wikipedia's vast knowledge base to deliver comprehensive, well-researched answers to your questions.
 
-Featuring a ReAct (Reasoning and Action) agent architecture that uses Wikipedia, or RAG (retrieval augmented generation) enhanced by semantic chunking and embeddings. Offers flexible access through both terminal and web interfaces.
+Featuring a ReAct (Reasoning and Action) agent architecture that uses Wikipedia, or RAG (retrieval augmented generation), semantic chunking, embeddings, GraphRAG. Offers flexible access through both terminal and web interfaces.
 
-Built on a modern stack including LangChain's LangGraph's ReAct agent, Wikipedia API, FAISS vector storage, support for leading LLM providers (OpenAI, Anthropic, Google), and Streamlit frontend. 
+Built on a modern stack including LangChain's LangGraph's ReAct agent, Wikipedia API, FAISS vector storage, Microsoft's GraphRAG,support for leading LLM providers (OpenAI, Anthropic, Google), and Streamlit frontend. 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -17,7 +17,7 @@ Built on a modern stack including LangChain's LangGraph's ReAct agent, Wikipedia
   - Anthropic: claude-3-5-sonnet-latest
   - Google: gemini-exp-1206, gemini-1.5-pro, gemini-2.0-flash-exp, gemini-2.0-flash-thinking-exp-1219
 - 🔍 Wikipedia search capabilities
-- 📚 RAG (Retrieval Augmented Generation) support
+- 📚 RAG (Retrieval Augmented Generation) support, soon finished GraphRAG
 - 💾 Conversation memory and thread management
 - 🖥️ Both terminal and web interfaces
 - 🔄 Streaming responses for real-time interaction
@@ -28,7 +28,7 @@ Built on a modern stack including LangChain's LangGraph's ReAct agent, Wikipedia
 The project uses a modular architecture with:
 - LangGraph's ReAct agent for agent orchestration
 - LangChain for LLM interactions and tool integration
-- FAISS for vector storage (when using RAG)
+- FAISS for vector storage (when using RAG), or soon finished GraphRAG
 - Streamlit for the web interface
 
 ## Setup
@@ -76,6 +76,7 @@ python app_terminal.py
 To use RAG functionality instead of Wikipedia search:
 1. Place wikipedia pages text files in the `rag_data/` directory (by default includes only artificial_intelligence.txt, physics.txt)
 2. Set `USE_RAG=true` in your `.env` file
+GraphRAG will work soon too.
 
 ## Contributing
 
@@ -83,8 +84,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## TODO
 
+- [ ] Finish GraphRAG support
 - [ ] Implement automatic Wikipedia scraping for RAG data collection
-- [ ] Add GraphRAG support for improved knowledge retrieval
 - [ ] Integrate text-to-speech capabilities
 - [ ] Add support for more LLM providers (e.g., Mistral, Cohere)
 - [ ] Create a Docker container for easy deployment
