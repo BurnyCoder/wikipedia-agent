@@ -8,7 +8,7 @@ Built on a modern stack including LangChain's LangGraph, Streamlit, FAISS vector
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![readme](https://github.com/user-attachments/assets/a38abdfc-eb7f-4a5c-b56a-399c3ddfc98b)
+![image](https://github.com/user-attachments/assets/1bf6474b-3507-4918-a163-250caed9b5e3)
 
 ## Features
 
