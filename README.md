@@ -41,7 +41,7 @@ cd wikipedia-agent
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables in `.env`:
+3. Configure by setting up environment variables in `.env`:
 ```bash
 OPENAI_API_KEY="your_key_here" # if you want to use OpenAI
 ANTHROPIC_API_KEY="your_key_here" # if you want to use Anthropic
@@ -74,13 +74,6 @@ python app_terminal.py
 To use RAG functionality instead of Wikipedia search:
 1. Place wikipedia pages text files in the `rag_data/` directory (by default includes only artificial_intelligence.txt, physics.txt)
 2. Set `USE_RAG=true` in your `.env` file
-
-## Configuration
-
-The agent can be configured through environment variables:
-- `LLM`: Choose the LLM model (claude-3-5-sonnet-latest, gpt-4-turbo-preview, gemini-pro)
-- `USE_RAG`: Enable/disable RAG functionality
-- `SYSTEM_PROMPT`: Customize the agent's behavior
 
 ## Contributing
 
