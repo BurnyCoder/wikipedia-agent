@@ -33,7 +33,8 @@ The project uses a modular architecture with:
 
 ## Setup
 
-1. Clone the repository:```bash
+1. Clone the repository:
+```bash
 git clone https://github.com/yourusername/wikipedia-agent.git
 cd wikipedia-agent
 ```
