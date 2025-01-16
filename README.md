@@ -83,7 +83,7 @@ GraphRAG will work soon too.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a pull request.
 
 ## TODO
 
