@@ -28,6 +28,7 @@ Built on a modern stack including LangChain's LangGraph's ReAct agent, Wikipedia
 The project uses a modular architecture with:
 - LangGraph's ReAct agent for agent orchestration
 - LangChain for LLM interactions and tool integration
+- Wikipedia API as agent's tool
 - FAISS for vector storage (when using RAG), or soon finished GraphRAG
 - Streamlit for the web interface
 
