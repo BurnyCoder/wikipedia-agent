@@ -78,6 +78,7 @@ python app_terminal.py
 To use RAG functionality instead of Wikipedia search:
 1. Place wikipedia pages text files in the `rag_data/` directory (by default includes only artificial_intelligence.txt, physics.txt)
 2. Set `USE_RAG=true` in your `.env` file
+   
 GraphRAG will work soon too.
 
 ## Contributing
